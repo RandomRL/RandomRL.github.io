@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Rocket League</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <link rel="stylesheet" href="css/odometer-theme-default.css" />
+  <link rel="stylesheet" href="css/switch.css" />
+</head>
+TEST
+<body>
+  <div class="background">
+    <div class="container-fluid container__main">
+      <!--ROW FOR TITLE IMAGE-->
+      <div class="row row__main">
+        <div class="col-12 col-md-6 m-auto col__main">
+          <div class="scene" id="scene">
+            <div class="card" id="card">
+              <!-------FRONT CARD--------->
+              <!-------FRONT CARD--------->
+              <div class="card__face card__face--front" id="front">
+                <div class="parent__wrapper">
+                  <div class="child__wrapper">
+                    <img src="images/title.png" class="titleimage">
+                    <button class="mainbuttons" id="quickpick">Quick Pick</button>
+                    <div class="custom__wrapper">
+                      <button class="mainbuttons" id="custompick">Custom</button>
+                    </div>                    
+                  </div>
+                  <div class="closed" id="settings">
+                      <div class="row" id="switchRow">
+                        <div class="col-6 switchCol">
+                          Random Teams
+                          <label class="switch">
+                            <input type="checkbox" id="switch1" checked>
+                            <span class="slider"></span>
+                          </label>
+                        </div>
+                        <div class="col-6 switchCol">
+                            Mode
+                            <label class="switch">
+                                <input type="checkbox" id="switch2">
+                                <span class="slider"></span>
+                              </label>
+                        </div>
+                        <div class="col-6 switchCol">
+                          Rumble
+                          <label class="switch">
+                              <input type="checkbox" id="switch3" checked>
+                              <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="col-6 switchCol">
+                          Mutators
+                          <label class="switch">
+                              <input type="checkbox"checked>
+                              <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="col-6 switchCol">
+                          Map
+                          <label class="switch">
+                              <input type="checkbox"checked>
+                              <span class="slider"></span>
+                            </label>
+                        </div>                        
+                      </div>
+                  </div>                  
+                </div>                
+              </div>
+              <!---------BACK CARD--------->
+              <!---------BACK CARD--------->
+              <div class="card__face card__face--back quick__card" id="back--visible">
+                <img src="images/reload.png" class="reload" id="reload"></img>
+                <div class="parent__wrapper">
+
+                  <div class="bg__wrapper" id="bg__wrapper">
+                    <div class="child__wrapper--back">
+                      <div class="result__wrapper row">
+                        <h2 class="result__title col-3">Team A:</h2>
+                        <h2 class="result__answer col-9" id="team1"></h2>
+                      </div>
+                      <div class="result__wrapper row">
+                        <h2 class="result__title col-3">Team B:</h2>
+                        <h2 class="result__answer col-9" id="team2"></h2>
+                      </div>
+                      <div class="result__wrapper row">
+                        <h2 class="result__title col-3">Mode:</h2>
+                        <h2 class="result__answer col-9" id="mode"></h2>
+                      </div>
+                      <div class="result__wrapper row">
+                        <h2 class="result__title col-3">Rumble:</h2>
+                        <h2 class="result__answer col-9" id="rumble"></h2>
+                      </div>
+                      <div class="result__wrapper row">
+                        <h2 class="result__title col-3">Map:</h2>
+                        <h2 class="result__answer col-9" id="map"></h2>
+                      </div>
+                      <div class="result__wrapper row" id=" mutator__wrapper">
+                        <h2 class="result__title col-3" id="mutator__title">Mut's:</h2>
+                        <div class="mutator__list col-9" id="mutators"></div>
+                      </div>
+                    </div>
+
+                    <div class="points">
+                      <p class="odometer" id="numberSpan">000</p>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <p class="credit">Matthew Williams 2018</p>
+  <script type="text/javascript" src="js/odometer.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
