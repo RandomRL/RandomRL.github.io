@@ -37,7 +37,7 @@
 }
 
 input:checked + .slider {
-    background-color: dodgerblue;
+    background-color: #00539F;
 }
 
 input:checked + .slider:before {

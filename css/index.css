@@ -15,7 +15,7 @@ body {
 }
 
 .background {
-  background-image: url(../images/DARKbg.jpg);
+  background-image: url(../images/bg.jpg);
   height:100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,13 +134,14 @@ body {
 }
 
 #settings {
-  width: 75%;
+  min-width: 300px;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   border: 0px solid rgb(238, 47, 212);
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.30);  
+  border-radius: 5px;
 }
 
 .closed {
@@ -153,6 +154,7 @@ body {
 }
 
 #switchRow {
+  padding-top: 10%;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -173,7 +175,7 @@ body {
 .titleimage {
   margin-top: 30px;
   margin-bottom: 30px;
-  width: 30%;
+  width: 40%;
   min-width: 200px;
   display: block;
   margin-left: auto;
