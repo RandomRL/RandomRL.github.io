@@ -4,7 +4,8 @@ var modes = ["Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey",
 var rumbleYN = ["Regular", "Regular", "Regular", "Rumble", "Rumble"];
 var rumbles = ["Default", "Slow", "Civilized", "Destruction Derby", "Spring Loaded", "Spikes Only"];
 var mutatorYN = ["No Mutators", "No Mutators", "No Mutators", "No Mutators", "Mutators", "Mutators"]
-var maps = ["DFH Stadium", "Mannfield", "Champions Field", "Urban Central", "Beckwith Park", "Utopia Colliseum", "Wasteland", "Neo Tokyo", "Aquadome", "Starbase Arc", "Salty Shores", "Farmstead", "DFH Stadium (Stormy)", "DFH Stadium (Day)", "Mannfield (Stormy)", "Mannfield (Night)", "Beckwith Park (Night)", "Beckwith Park (Stormy)", "Champions Field (Day)", "Wasteland (Night)", "DFH Stadium (Snowy)", "Mannfield (Snowy)", "Utopia Colliseum (Snowy)", "Badlands", "Badlands (Night)", "Tokyo Underpass", "Arctagon", "Two Pillars", "Cosmic", "Double Goal", "Octagon", "Underpass", "Utopia Retro", "Throwback Stadium"];
+var maps = ["DFH Stadium", "Mannfield", "Champions Field", "Urban Central", "Beckwith Park", "Utopia Coliseum", "Wasteland", "Neo Tokyo", "Aquadome", "Starbase Arc", "Salty Shores", "Farmstead", "DFH Stadium (Stormy)", "DFH Stadium (Day)", "Mannfield (Stormy)", "Mannfield (Night)", "Beckwith Park (Night)", "Beckwith Park (Stormy)", "Champions Field (Day)", "Wasteland (Night)", "DFH Stadium (Snowy)", "Mannfield (Snowy)", "Utopia Coliseum (Snowy)", "Utopia Coliseum (Dusk)", "Badlands", "Badlands (Night)", "Tokyo Underpass", "Arctagon", "Two Pillars", "Cosmic", "Double Goal", "Octagon", "Underpass", "Utopia Retro", "Throwback Stadium", "Rivals Arena", "Urban Central (Night)", "Urban Central (Dawn)"];
+/*var maps = ["Utopia Coliseum (Dusk)"];
 
 /**MUTATOR ARRAYS**/
 var matchLengthM = ["5", "5", "5", "5", "5", "5", "5", "10", "10", /*"20"*/];
@@ -13,7 +14,7 @@ var overTimeM = ["Unlimited", "Unlimited", "+5 Max, First Score", "+5 Max, Rando
 var seriesM = ["1", "1", "1", "1", "1", "1", "1", "3", "5", "7"];
 var gameSpeedM = ["Default", "Default", "Default", "Default", "Slo-Mo", "Time Warp"];
 var ballMaxSpeedM = ["Default", "Default", "Default", "Slow", "Fast", "Super Fast"];
-var ballTypeM = ["Default", "Default", "Cube", "Puck", "Basketball"];
+var ballTypeM = ["Default", "Default", "Cube", "Basketball", "10th Anniversary"];
 var ballWeightM = ["Default", "Default", "Light", "Heavy", "Super Light", "10th Anniversary"];
 var ballSizeM = ["Default", "Default", "Small", "Large", "Gigantic"];
 var ballBouncinessM = ["Default", "Default", "Low", "High", "Super High"];
@@ -25,12 +26,13 @@ var respawnTimeM = ["3 Secs", "3 Secs", "2 Secs", "1 Sec", "Disable Goal Reset"]
 
 
 /*******SWITCH VARS********/
+var quickPick = document.getElementById("quickpick");
 var modeSwitch = document.getElementById("switch2");
 var rumbleSwitch = document.getElementById("switch3");
 /**********************************/
 
 /********PICK FUNCTIONS********/
-document.getElementById("quickpick").onclick = 
+quickPick.onclick = 
 function quickPick() {
   /**Team Selector**/
   var player1;
@@ -49,14 +51,16 @@ function quickPick() {
   shuffleTeam();  
 
   /**Mode Selector**/
+  var modeResult = "";
   function mode(){
     if (modeSwitch.checked == true) {
-      return modes[Math.floor(Math.random()*modes.length)];
+      modeResult = modes[Math.floor(Math.random()*modes.length)];
     }
     else {
       return "Not Selected.";
     }    
   }
+  mode();
 
   /**Rumble Selector**/
   
@@ -81,10 +85,10 @@ function quickPick() {
   var map = "";
 
   (function mapChoice() {
-    if (mode == "Hoops") {
+    if (modeResult == "Hoops") {
       map = "Dunk House";
     }
-    else if (mode == "Dropshot") {
+    else if (modeResult == "Dropshot") {
       map = "Core 707";
     }
     else {
@@ -93,12 +97,14 @@ function quickPick() {
   })();
   
   /**Select Background Image**/
+  var mapURL;
   var mapImg = function(map) {
     var stripped = map.replace(/\W/g, '').toLowerCase();
     console.log(stripped + ".png");
-    return "url(images/" + stripped + ".png)";
+    mapURL = "url(images/maps/" + stripped + ".png)";
+    return "url(images/maps/" + stripped + ".png)";
   };
-
+  
   /**Add Background Image**/
   document.getElementById("bg__wrapper").style.backgroundImage = mapImg(map);
 
@@ -116,7 +122,21 @@ function quickPick() {
       var series = seriesM[Math.floor(Math.random()*seriesM.length)];
       var gameSpeed = gameSpeedM[Math.floor(Math.random()*gameSpeedM.length)];
       var ballMaxSpeed = ballMaxSpeedM[Math.floor(Math.random()*ballMaxSpeedM.length)];
-      var ballType = ballTypeM[Math.floor(Math.random()*ballTypeM.length)];
+
+
+      var ballType = function() {
+        if (modeResult == "Hockey") {
+          return "Puck";
+        }
+        else if (modeResult == "Dropshot") {
+          return "Default";
+        }
+        else {
+          return ballTypeM[Math.floor(Math.random()*ballTypeM.length)];
+        }
+      }
+
+
       var ballWeight = ballWeightM[Math.floor(Math.random()*ballWeightM.length)];
       var ballSize = ballSizeM[Math.floor(Math.random()*ballSizeM.length)];
       var ballBounciness = ballBouncinessM[Math.floor(Math.random()*ballBouncinessM.length)];
@@ -126,25 +146,22 @@ function quickPick() {
       var demolish = demolishM[Math.floor(Math.random()*demolishM.length)];
       var respawnTime = respawnTimeM[Math.floor(Math.random()*respawnTimeM.length)];
 
-      return "<ul><li>Match length: " + matchLength + "</li><li>Max Score: " + maxScore + "</li><li>Over Time: " + overTime + "</li><li>Series: " + series + "</li><li>Game Speed: " + gameSpeed + "</li><li>Ball Speed: "+ ballMaxSpeed + "</li><li>Ball Type: " + ballType + "</li><li>Ball Weight: " + ballWeight + "</li><li>Ball Size: " + ballSize + "</li><li>Ball Bounciness: " + ballBounciness + "</li><li>Boost Amount: " + boostAmount + "</li><li>Boost Strength: " + boostStrength + "</li><li>Gravity: " + gravity + "</li><li>Demolition: " + demolish + "</li><li>Respawn Time: " + respawnTime + "</li></ul>";
+      return "<ul><li>Match length: " + matchLength + "</li><li>Max Score: " + maxScore + "</li><li>Over Time: " + overTime + "</li><li>Series: " + series + "</li><li>Game Speed: " + gameSpeed + "</li><li>Ball Speed: "+ ballMaxSpeed + "</li><li>Ball Type: " + ballType() + "</li><li>Ball Weight: " + ballWeight + "</li><li>Ball Size: " + ballSize + "</li><li>Ball Bounciness: " + ballBounciness + "</li><li>Boost Amount: " + boostAmount + "</li><li>Boost Strength: " + boostStrength + "</li><li>Gravity: " + gravity + "</li><li>Demolition: " + demolish + "</li><li>Respawn Time: " + respawnTime + "</li></ul>";
       /**"Mutators: " + matchLength+" "+maxScore+" "+overTime+" "+series+" "+gameSpeed+" "+ballMaxSpeed+" "+ballType+" "+ballWeight+" "+ballSize+" "+ballBounciness+" "+boostAmount+" "+boostStrength+" "+gravity+" "+demolish+" "+respawnTime;**/
     }
   }
-  console.log(player1,player2,player3,player4);
-  console.log(mode);
-  console.log(rumble());
-  console.log(map);
-  console.log(mutator());
-
+  
   /****Adding Data to HTML****/
   document.getElementById("team1").innerHTML = player1 + " + " + player2;
   document.getElementById("team2").innerHTML = player3 + " + " + player4;
-  document.getElementById("mode").innerHTML = mode();
+  document.getElementById("mode").innerHTML = modeResult;
   document.getElementById("rumble").innerHTML = rumble();
   document.getElementById("map").innerHTML = map;
   document.getElementById("mutators").innerHTML = mutator();
 
   /****Card Flip****/
+  
+  
   document.getElementById("card").classList.toggle("is-flipped");
   document.getElementById("front").classList.add("hidden");
   setTimeout(function(){

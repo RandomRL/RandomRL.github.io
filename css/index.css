@@ -207,10 +207,16 @@ body {
 
 #quickpick {
   background-color: #EE1c2E;
+  content: "Randomize";
+  transition: all 1s ease-in-out;
 }
   #quickpick:hover, #quickpick:active {
     background-color: #CE2E34;
   }
+
+.clear {
+
+}  
 
 #custompick {
 background-color: #00539F;
