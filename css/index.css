@@ -186,18 +186,27 @@ body {
     margin-top: 15px;
     min-width: 100px;
     width: 50px;
-    height: 35px;
+    height: 30px;
     display: block;
     clear: both;
     margin-left:auto;
     margin-right:auto;
-    border-radius: 20px;
+    border-radius: 2px;
     border: none;
     color: #FFF;
     font-size: 11px;
     letter-spacing: 0.75px;
     text-transform: uppercase;
+    transform: skew(-20deg);
   }
+    .btn-text {
+      display: block;
+      transform: skew(20deg);
+      transition: all 0.22s ease-in-out;     
+    }
+      .btn-text:hover .btn-text:active {
+        transform: scale(1.7);
+      }
     .mainbuttons:hover {
       outline: none;
     }
@@ -206,12 +215,11 @@ body {
     }
 
 #quickpick {
-  background-color: #EE1c2E;
-  content: "Randomize";
-  transition: all 1s ease-in-out;
+  background-color: #09304A;
+  transition: all 0.22s ease-in-out;  
 }
   #quickpick:hover, #quickpick:active {
-    background-color: #CE2E34;
+    background-color: #1C709D;
   }
 
 .clear {
@@ -219,11 +227,11 @@ body {
 }  
 
 #custompick {
-background-color: #00539F;
-text-decoration: line-through;
+background-color: rgb(231, 71, 50);
+transition: all 0.22s ease-in-out;
 }
   #custompick:hover, #custompick:active {
-    background-color: #136A9B;
+    background-color: #F3921D;
   }
 
 .result__wrapper {
