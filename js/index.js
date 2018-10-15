@@ -170,8 +170,8 @@ function quickPick() {
   
   /**ODOMETER**/
 var points = function() {
-  var min = 50;
-  var max = 250;
+  var min = 100;
+  var max = 400;
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
