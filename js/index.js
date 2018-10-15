@@ -1,6 +1,6 @@
 /**ARRAYS**/
 var players = ["Mash", "Stace", "Ross", "Si"];
-var modes = ["Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey", "Dropshot", "Dropshot"]
+var modes = ["Soccar", "Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey", "Dropshot", "Dropshot"]
 var rumbleYN = ["Regular", "Regular", "Regular", "Rumble", "Rumble"];
 var rumbles = ["Default", "Slow", "Civilized", "Destruction Derby", "Spring Loaded", "Spikes Only"];
 var mutatorYN = ["No Mutators", "No Mutators", "No Mutators", "No Mutators", "Mutators", "Mutators"]

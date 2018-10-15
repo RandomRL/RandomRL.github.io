@@ -215,7 +215,7 @@ body {
     }
 
 #quickpick {
-  background-color: #09304A;
+  background-color: rgb(10, 67, 105);
   transition: all 0.22s ease-in-out;  
 }
   #quickpick:hover, #quickpick:active {
@@ -227,7 +227,7 @@ body {
 }  
 
 #custompick {
-background-color: rgb(231, 71, 50);
+background-color: rgb(236, 53, 29);
 transition: all 0.22s ease-in-out;
 }
   #custompick:hover, #custompick:active {
