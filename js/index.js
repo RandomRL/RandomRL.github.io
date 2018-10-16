@@ -1,3 +1,8 @@
+/**Potrait Mode Checker**/
+if(window.innerWidth > window.innerHeight){
+  alert("Please use RandomRL in potrait orientation.");
+}
+
 /**ARRAYS**/
 var players = ["Mash", "Stace", "Ross", "Si"];
 var modes = ["Soccar", "Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey", "Dropshot", "Dropshot"]
