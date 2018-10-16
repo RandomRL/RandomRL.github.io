@@ -1,14 +1,3 @@
-/**Potrait Mode Checker**/
-window.onresize = function (event) {
-  applyOrientation();
-}
-
-function applyOrientation() {
-  if (window.innerHeight < window.innerWidth) {
-   alert("Please use potrait.");
-  }
-}
-
 /**ARRAYS**/
 var players = ["Mash", "Stace", "Ross", "Si"];
 var modes = ["Soccar", "Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey", "Dropshot", "Dropshot"]
