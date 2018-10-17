@@ -7,10 +7,10 @@ $(document).ready(function() {
     
     console.log(mobile);
     
-    if (mobile == true && window.innerHeight > window.innerWidth) {
+    if (mobile == true && window.innerHeight < window.innerWidth) {
       document.getElementById("landscape__overlay").style.height = "100%";
     }
-    else if (mobile == true && window.innerHeight < window.innerWidth) {
+    else if (mobile == true && window.innerHeight > window.innerWidth) {
       document.getElementById("landscape__overlay").style.height = "0";
     }
   });
