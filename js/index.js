@@ -8,10 +8,10 @@ $(document).ready(function() {
     console.log(mobile);
     
     if (mobile == true && window.innerHeight > window.innerWidth) {
-      document.getElementById("landscape__overlay").style.width = "100%";
+      document.getElementById("landscape__overlay").style.height = "100%";
     }
     else if (mobile == true && window.innerHeight < window.innerWidth) {
-      document.getElementById("landscape__overlay").style.width = "0";
+      document.getElementById("landscape__overlay").style.height = "0";
     }
   });
 });
