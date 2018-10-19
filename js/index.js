@@ -17,7 +17,7 @@ window.onresize = function() {
 
 /*******************************************************************/
 /**ARRAYS**/
-var players = ["Mash", "Stace", "Ross", "Si"];
+var players = ["Player 1", "Player 2", "Player 3", "Player 4"];
 var modes = ["Soccar", "Soccar", "Soccar", "Soccar", "Hoops", "Hoops", "Hockey", "Hockey", "Dropshot", "Dropshot"]
 var rumbleYN = ["Regular", "Regular", "Regular", "Rumble", "Rumble"];
 var rumbles = ["Default", "Slow", "Civilized", "Destruction Derby", "Spring Loaded", "Spikes Only"];
@@ -75,7 +75,7 @@ function quickPick() {
       modeResult = modes[Math.floor(Math.random()*modes.length)];
     }
     else {
-      return "Not Selected.";
+      modeResult = "Not Selected.";
     }    
   }
   mode();

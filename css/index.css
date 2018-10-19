@@ -211,9 +211,9 @@ body {
     border-radius: 5px;
     border: none;
     color: #FFF;
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'BourgeoisW00-Medium', monospace;
     letter-spacing: 0.75px;
     text-transform: uppercase;
     transform: skew(-20deg);
@@ -264,15 +264,17 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
 
 .result__wrapper {
   padding-top: 10px;
-  font-size: 12px;
+  font-size: 13px;
+  font-family: 'BourgeoisW00-Medium', monospace;
 }
   .result__title {
-    font-size: 1.7em;
-    padding-left: 10%;
+    font-size: 1.5em;
+    padding-left: 7%;
   }
   .result__answer {
+    padding-top: 2px;
     padding-left: 5px;
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
   .mutator__list {
     font-size: 1.6em;    
@@ -288,7 +290,7 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
   bottom: 4%;
   font-size: 16px;
   width: 100%;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: "BourgeoisW00-Medium";
 }
   #numberSpan {
     font-size: 8em;
@@ -298,7 +300,7 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
     text-shadow: 0 0 9px #FFFFFF;
     display: block;
     text-align: center;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'BourgeoisW00-Medium', monospace;
     margin-left:auto;
     margin-right:auto;
   }
@@ -323,7 +325,7 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
     }
     .result__wrapper {
       padding-top: 5px;
-      font-size: 12px;
+      font-size: 16px;
     }
       .result__title {
         font-size: 1em;
