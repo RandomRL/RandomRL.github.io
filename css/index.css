@@ -34,7 +34,7 @@ body {
   }
 
 .background {
-  background-image: url(../images/bg/1.jpg);
+  /*background-image: url(../images/bg/1.jpg);*/
   height:100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -226,8 +226,6 @@ box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.2);
       transform: skew(20deg) scale(1.1,1);
       transition: all 0.22s ease-in-out;
     }
-      .btn-text:hover .btn-text:active {        
-      }
     .mainbuttons:hover {
       outline: none;
     }
@@ -268,9 +266,13 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
   font-family: 'BourgeoisW00-Medium', monospace;
 }
   .result__title {
+    text-shadow: 0 0 9px #FFFFFF;
     font-size: 1.5em;
-    padding-left: 7%;
+    font-weight: bold;
+    padding-left: 10%;
+    text-decoration: underline;
   }
+
   .result__answer {
     padding-top: 2px;
     padding-left: 5px;
@@ -328,22 +330,23 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
       font-size: 16px;
     }
       .result__title {
-        font-size: 1em;
+        font-size: 14px;
       }
       .result__answer {
         padding-left: 5px;
-        font-size: 1em;
+        font-size: 14px;
       }
       .mutator__list {
-        font-size: 1em;    
+        font-size: 12px;    
         margin-left: -10px;
       }
         .mutator__list  ul {
-          font-size: 0.8em;
+          font-size: 12px;
           margin-left: -30px;
         }
       #numberSpan {
-        font-size: 5em;
+        
+        font-size: 4.5em;
   }
 
   .mainbuttons {
