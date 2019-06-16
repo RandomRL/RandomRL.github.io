@@ -1,3 +1,4 @@
+/*PORTRAIT ONLY MODE (FOR MOBILES*/
 window.onresize = function () {
   var mobile = false
   ;(function mobilecheck () {
@@ -27,6 +28,12 @@ window.onresize = function () {
     document.getElementById('landscape__overlay').style.height = '0'
   }
 }
+
+/**RANDOM BACKGROUND CODE**/
+var bgCount = 16
+var num = Math.ceil(Math.random() * bgCount);
+document.getElementById("bg").style.background = "url('images/bg/" + num + ".jpg') no-repeat center center fixed";
+document.getElementById("bg").style.backgroundSize = "cover";
 
 /*******************************************************************/
 /** ARRAYS**/
