@@ -32,7 +32,7 @@ window.onresize = function () {
 }
 
 /** RANDOM BACKGROUND CODE**/
-var bgCount = 16
+var bgCount = 32
 var num = Math.ceil(Math.random() * bgCount)
 document.getElementById('bg').style.background =
   "url('images/bg/" + num + ".jpg') no-repeat center center fixed"
