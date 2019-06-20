@@ -11,13 +11,15 @@
   <link href="https://fonts.googleapis.com/css?family=Anton|Oswald" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
   <link rel="stylesheet" href="css/odometer-theme-default.css" />
-  <link href="https://db.onlinewebfonts.com/c/6dbb2ef49faa5474e0d891864e3a6c2b?family=BourgeoisW00-Medium" rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/6dbb2ef49faa5474e0d891864e3a6c2b?family=BourgeoisW00-Medium"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/switch.css" />
 </head>
+
 <body>
-    <div id="landscape__overlay" class="overlay">
-      <span class="overlay__content">Please use portrait orientation.</span>
-    </div>
+  <div id="landscape__overlay" class="overlay">
+    <span class="overlay__content">Please use portrait orientation.</span>
+  </div>
 
 
   <div class="background" id="bg">
@@ -36,48 +38,85 @@
                     <button class="mainbuttons" id="quickpick"><span class="btn-text">Randomize</span></button>
                     <div class="custom__wrapper">
                       <button class="mainbuttons" id="custompick"><span class="btn-text">Settings</span></button>
-                    </div>                    
+                    </div>
                   </div>
                   <div class="closed" id="settings">
-                      <div class="row" id="switchRow">
-                        <div class="col-6 switchCol">
-                          Teams
-                          <label class="switch">
-                            <input type="checkbox" id="switch1" checked>
-                            <span class="slider"></span>
-                          </label>
-                        </div>
-                        <div class="col-6 switchCol">
-                            Mode
-                            <label class="switch">
-                                <input type="checkbox" id="switch2" checked>
-                                <span class="slider"></span>
-                              </label>
-                        </div>
-                        <div class="col-6 switchCol">
-                          Rumble
-                          <label class="switch">
-                              <input type="checkbox" id="switch3" checked>
-                              <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="col-6 switchCol">
-                          Mutators
-                          <label class="switch">
-                              <input type="checkbox"checked>
-                              <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="col-6 switchCol">
-                          Map
-                          <label class="switch">
-                              <input type="checkbox"checked>
-                              <span class="slider"></span>
-                            </label>
-                        </div>                        
+                    <div class="row" id="switchRow">
+                      <div class="col-6 switchCol">
+                        Teams
+                        <label class="switch">
+                          <input type="checkbox" id="switch1" checked>
+                          <span class="slider"></span>
+                        </label>
                       </div>
-                  </div>                  
-                </div>                
+                      <div class="col-6 switchCol">
+                        Mode
+                        <label class="switch">
+                          <input type="checkbox" id="switch2" checked>
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                      <div class="col-6 switchCol">
+                        Rumble
+                        <label class="switch">
+                          <input type="checkbox" id="switch3" checked>
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                      <div class="col-6 switchCol">
+                        Mutators
+                        <label class="switch">
+                          <input type="checkbox" checked>
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                      <div class="col-6 switchCol">
+                        Map
+                        <label class="switch">
+                          <input type="checkbox" checked>
+                          <span class="slider"></span>
+                        </label>
+                      </div>
+                      <div class="col-6 switchCol">
+                        Players
+                      </br>
+                        <select id="playerCount">
+                          <option value="1v1" class="teamDropdown">1v1</option>
+                          <option value="2v2" class="teamDropdown" selected="selected">2v2</option>
+                          <option value="4v4" class="teamDropdown">4v4</option>
+                        </select>
+                      </div>
+
+                      <div class="row nameContainer">
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 1"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 2"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 3"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 4"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 5"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 6"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 7"></input>
+                        </div>
+                        <div class="col-6 switchCol">
+                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 8"></input>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
               </div>
               <!---------BACK CARD--------->
               <!---------BACK CARD--------->
@@ -107,8 +146,8 @@
                         <h2 class="result__title col-4">Map:</h2>
                         <h2 class="result__answer col-8" id="map"></h2>
                       </div>
-                      <div class="result__wrapper row" id=" mutator__wrapper">
-                        <h2 class="result__title col-4" id="mutator__title">Mut's:</h2>
+                      <div class="result__wrapper row" id="mutator__wrapper">
+                        <h2 class="result__title col-4" id="mutator__title">Mut's:</h2> 
                         <div class="mutator__list col-8" id="mutators"></div>
                       </div>
                     </div>
