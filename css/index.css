@@ -10,7 +10,7 @@ html {
 body {
   height: 100%;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 62.5%;
+  font-size: 70%;
   color: #FFF;  
 }
 .overlay {
@@ -143,7 +143,7 @@ body {
   .child__wrapper--back {
     position: absolute;
     width: 100%;
-    top: 17%;
+    top: 15%;
     transform: translateY(-20%);
     -webkit-transform: translateY(-20%);
   }
@@ -153,13 +153,13 @@ body {
 }
 
 #settings {
-  min-width: 300px;
-  width: 40%;
+  min-width: 320px;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
   border: 0px solid rgb(238, 47, 212);
-  background-color: rgba(0, 0, 0, 0.30);  
+  background-color: rgba(0, 0, 0, 0.30);
   border-radius: 5px;
 }
 
@@ -169,20 +169,42 @@ body {
   transition: height 0.5s ease-in-out;
 }
 .open {
-  height: 400px;
+  height: 430px;
 }
 
 #switchRow {
-  padding-top: 10%;
-  width: 80%;
+  padding-top: 5%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 .switchCol {
-  padding-top: 30px;
+  padding-top: 10px;
+}
+
+#playerCount {
+  margin-top: 5px;
+  width: 70%;
+  border-radius: 2px;
+  text-align-last:right;
+  padding-right: 29px;
+    direction: rtl;
+  transform: skewX(-8deg);
+  color: #105477;
+}
+
+.nameContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.playerName {
+  width: 100%;
+  border-radius: 3px;
 }
 
 /********************************/
@@ -262,13 +284,13 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
 
 .result__wrapper {
   padding-top: 10px;
-  font-size: 13px;
+  font-size: 16px;
   font-family: 'BourgeoisW00-Medium', monospace;
 }
   .result__title {
     text-shadow: 0 0 9px #FFFFFF;
-    font-size: 1.5em;
     font-weight: bold;
+    font-size: 1.3em;
     padding-left: 10%;
     text-decoration: underline;
   }
@@ -276,15 +298,16 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
   .result__answer {
     padding-top: 2px;
     padding-left: 5px;
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
   .mutator__list {
-    font-size: 1.6em;    
+    font-size: 1.2em;    
     margin-left: -10px;
   }
     .mutator__list  ul {
       font-size: 0.8em;
       margin-left: -30px;
+      margin-bottom: -10px;
     }
 
 .points {
@@ -293,9 +316,10 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
   font-size: 16px;
   width: 100%;
   font-family: "BourgeoisW00-Medium";
+  bottom: 8px;
 }
   #numberSpan {
-    font-size: 8em;
+    font-size: 7em;
     /*-webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black; */
     color: #FFFFFF;
@@ -344,6 +368,7 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
           font-size: 12px;
           margin-left: -30px;
         }
+        
       #numberSpan {
         
         font-size: 4.5em;
