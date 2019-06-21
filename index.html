@@ -66,14 +66,14 @@
                       <div class="col-6 switchCol">
                         Mutators
                         <label class="switch">
-                          <input type="checkbox" checked>
+                          <input type="checkbox" id="switch4" checked>
                           <span class="slider"></span>
                         </label>
                       </div>
                       <div class="col-6 switchCol">
                         Map
                         <label class="switch">
-                          <input type="checkbox" checked>
+                          <input type="checkbox" id="switch5" checked>
                           <span class="slider"></span>
                         </label>
                       </div>
@@ -89,32 +89,33 @@
 
                       <div class="row nameContainer">
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName show" id="player1" onfocus="this.value=''" maxlength="20" value="Player 1"></input>
+                          <input type="text" class="playerName show" id="player1" onfocusout="defaultName()" onfocus="this.value=''" maxlength="20" value="Player 1" placeholder="Player 1"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName show" id="player2" onfocus="this.value=''" maxlength="20" value="Player 2"></input>
+                          <input type="text" class="playerName show" id="player2" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 2" placeholder="Player 2"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName show" id="player3" onfocus="this.value=''" maxlength="20" value="Player 3"></input>
+                          <input type="text" class="playerName show" id="player3" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 3" placeholder="Player 3"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName show" id="player4" onfocus="this.value=''" maxlength="20" value="Player 4"></input>
+                          <input type="text" class="playerName show" id="player4" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 4" placeholder="Player 4"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName hide" id="player5" onfocus="this.value=''" maxlength="20" value="Player 5"></input>
+                          <input type="text" class="playerName hide" id="player5" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 5" placeholder="Player 5"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName hide" id="player6" onfocus="this.value=''" maxlength="20" value="Player 6"></input>
+                          <input type="text" class="playerName hide" id="player6" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 6" placeholder="Player 6"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName hide" id="player7" onfocus="this.value=''" maxlength="20" value="Player 7"></input>
+                          <input type="text" class="playerName hide" id="player7" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 7" placeholder="Player 7"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName hide" id="player8" onfocus="this.value=''" maxlength="20" value="Player 8"></input>
+                          <input type="text" class="playerName hide" id="player8" onfocusout="defaultName()"  onfocus="this.value=''" maxlength="20" value="Player 8" placeholder="Player 8"></input>
                         </div>
                       </div>
                       
                     </div>
+                   <div id="reset">Reset</div>
                   </div>
                 </div>
               </div>
