@@ -80,37 +80,37 @@
                       <div class="col-6 switchCol">
                         Players
                       </br>
-                        <select id="playerCount">
-                          <option value="1v1" class="teamDropdown">1v1</option>
-                          <option value="2v2" class="teamDropdown" selected="selected">2v2</option>
-                          <option value="4v4" class="teamDropdown">4v4</option>
+                        <select id="playerCount" onchange="getPlayerCount(), adjustPlayerBoxes()">
+                          <option value="1" class="teamDropdown">1v1</option>
+                          <option value="2" class="teamDropdown" selected="selected">2v2</option>
+                          <option value="4" class="teamDropdown">4v4</option>
                         </select>
                       </div>
 
                       <div class="row nameContainer">
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 1"></input>
+                          <input type="text" class="playerName show" id="player1" onfocus="this.value=''" maxlength="20" value="Player 1"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 2"></input>
+                          <input type="text" class="playerName show" id="player2" onfocus="this.value=''" maxlength="20" value="Player 2"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 3"></input>
+                          <input type="text" class="playerName show" id="player3" onfocus="this.value=''" maxlength="20" value="Player 3"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 4"></input>
+                          <input type="text" class="playerName show" id="player4" onfocus="this.value=''" maxlength="20" value="Player 4"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 5"></input>
+                          <input type="text" class="playerName hide" id="player5" onfocus="this.value=''" maxlength="20" value="Player 5"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 6"></input>
+                          <input type="text" class="playerName hide" id="player6" onfocus="this.value=''" maxlength="20" value="Player 6"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 7"></input>
+                          <input type="text" class="playerName hide" id="player7" onfocus="this.value=''" maxlength="20" value="Player 7"></input>
                         </div>
                         <div class="col-6 switchCol">
-                          <input type="text" class="playerName" onfocus="this.value=''" maxlength="20" value="Player 8"></input>
+                          <input type="text" class="playerName hide" id="player8" onfocus="this.value=''" maxlength="20" value="Player 8"></input>
                         </div>
                       </div>
                       
