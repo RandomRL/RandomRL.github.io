@@ -1,3 +1,58 @@
+/**RETRIEVE LOCAL STORAGE DATA**/
+//Retrieve Switch States
+for (var i = 1; i <=5; i++) {
+  if (localStorage.getItem("switch" + i) !== null) { // check if localstorage has item first
+    var checked = JSON.parse(localStorage.getItem("switch" + i));
+  if (checked == true) {
+      document.getElementById("switch" + i).checked = true;
+  }
+  else {
+    document.getElementById("switch" + i).checked = false;
+  }
+  }  
+}
+
+//Retrieve DropDown State
+if (localStorage.getItem("drop") !== null) {
+  document.getElementById("playerCount").value = localStorage.getItem("drop");
+}
+
+//Retrieve Custom Names
+for (var i = 1; i <= 8; i++) {
+  var x = document.getElementById("player" + i);
+  if (localStorage.getItem("player" + i) !== null) {
+    x.value = localStorage.getItem("player" + i);    
+  }
+  else {
+    x.value = "Player " + i
+  }
+}
+
+
+/**RETURN EMPTY NAME BOXES TO DEFAULT**/
+function defaultName() {
+  for (var i = 1; i <=8; i++) {
+    var x = document.getElementById("player" + i)
+    if (x.value.length == 0) {
+      x.value = "Player " + i;
+    }
+  }
+}
+
+/**RESET BUTTONS**/
+var resetBtn = document.getElementById("reset");
+resetBtn.onclick = function() {
+  for (var i = 1; i <= 5; i++) { // reset switches
+    var x = document.getElementById("switch" + i);
+    x.checked = true;
+  }
+
+  document.getElementById("playerCount").value = 2;
+  getPlayerCount();
+  adjustPlayerBoxes();
+}
+
+  
   /* PORTRAIT ONLY MODE (FOR MOBILES */
   window.onresize = function () {
     var mobile = false
@@ -16,7 +71,6 @@
       })(navigator.userAgent || navigator.vendor || window.opera)
     })()
   
-    console.log(mobile)
   
     if (
       mobile == true &&
@@ -36,7 +90,6 @@
   let pValue = pCount.value;
   function getPlayerCount() {
     pValue = pCount.value;
-    console.log(pValue);
   }
   function adjustPlayerBoxes() {
     if (pValue == 1) {
@@ -224,9 +277,33 @@
   
   /** ******PICK FUNCTIONS********/
   quickPick.onclick = function quickPick () {
-    var players = []
+
+    /**SAVE SWITCH SETTINGS TO LOCAL STORAGE**/
+    for (var i = 1; i <= 5; i++) {
+      var x = document.getElementById("switch" + i);
+      if (x.checked) {
+        localStorage.setItem("switch" + i, true);
+      }
+      else if (x.checked === false) {
+        localStorage.setItem("switch" + i, false);
+      }
+    }
+
+    /**SAVE TEAM SIZE TO LOCAL STORAGE**/
+    var drop = document.getElementById("playerCount");
+    localStorage.setItem("drop", drop.value);
+
+    /**SAVE CUSTOM NAMES TO LOCAL STORAGE**/
+    for (var i = 1; i <= 8; i++) {
+      var x = document.getElementById("player" + i)
+      localStorage.setItem("player" + i, x.value)
+    }
   
-    function shuffle() {
+
+
+  /**SHUFFLE TEAMS**/    
+    var players = []
+    function assignTeams() {
       if(pValue == 1) {
         for (var i = 1; i <= 2; i++) {
           players.push($("#player" + i).val())
@@ -242,12 +319,20 @@
           players.push($("#player" + i).val())
         }
       }
+  
+    }
+    assignTeams();
+    
+
+    if(document.getElementById("switch1").checked == true) {
       players.sort(function (a, b) { // Randomize order of array
         return 0.5 - Math.random()
       })
     }
+
+
   
-    shuffle()
+    
   
     /** Mode Selector**/
     var modeResult = ''
@@ -271,7 +356,7 @@
           return rumbles[Math.floor(Math.random() * rumbles.length)]
         }
       } else {
-        return 'Not Selected.'
+        return 'Not Selected'
       }
     }
   
@@ -283,7 +368,11 @@
         map = 'Dunk House'
       } else if (modeResult == 'Dropshot') {
         map = 'Core 707'
-      } else {
+      }
+        else if (document.getElementById("switch5").checked === false) {
+          map = "Not Selected";
+        }
+      else {
         map = maps[Math.floor(Math.random() * maps.length)]
       }
     })()
@@ -383,7 +472,7 @@
     }
     else if (pValue == 2) {
       document.getElementById('team1').innerHTML = players[0] + ' + ' + players[1]
-      document.getElementById('team2').innerHTML = players[2] + '+ ' + players[3]
+      document.getElementById('team2').innerHTML = players[2] + ' + ' + players[3]
     }
     else if (pValue == 4) {
       document.getElementById('team1').innerHTML = players[0] + ' + ' + players[1] + ' + ' + players[2] + ' + ' + players[3]
