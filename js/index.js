@@ -121,7 +121,7 @@ resetBtn.onclick = function() {
   
   
   /** RANDOM BACKGROUND CODE**/
-  var bgCount = 32;
+  var bgCount = 22;
   var num = Math.ceil(Math.random() * bgCount);
   document.getElementById('bg').style.background =
     "url('images/bg/" + num + ".jpg') no-repeat center center fixed";
