@@ -10,8 +10,8 @@ html {
 body {
   height: 100%;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 1.2vh;
-  color: #FFF;  
+  font-size: 1.3vh;
+  color: #FFF;
 }
 
 
@@ -34,8 +34,9 @@ body {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
-  transition: 1.5s;
+  transition: 1.3s;
   text-align: center;
+  font-size: 2em;
 }
   .overlay__content {
     display: block;
@@ -76,7 +77,7 @@ body {
     border: 0px solid black;
     height: 100%;
     position: relative;
-    transition: transform 1.5s;
+    transition: transform 0.95s;
     transition-timing-function: ease-in-out;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
@@ -186,7 +187,7 @@ body {
 .closed {
   margin-top: -80px;
   height: 0px;  
-  transition: height 0.5s ease-in-out;
+  transition: height 0.4s ease-in-out;
 }
 .open {
   height: 430px;
@@ -309,7 +310,6 @@ box-shadow: 0px 0px 5px 2px rgba(243,146,29,1);
 }
   .result__title {
     text-shadow: 0 0 9px #FFFFFF;
-    font-weight: bold;
     font-size: 2.2em;
     padding-left: 10%;
     text-decoration: underline;
