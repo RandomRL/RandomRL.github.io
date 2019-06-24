@@ -47,6 +47,10 @@ resetBtn.onclick = function() {
     x.checked = true;
   }
 
+  for (var i = 1; i <= 8; i++) { //Set default names
+    var x = document.getElementById("player" + i);
+    x.value = "Player " + i;
+  }
   document.getElementById("playerCount").value = 2;
   getPlayerCount();
   adjustPlayerBoxes();
@@ -121,7 +125,7 @@ resetBtn.onclick = function() {
   
   
   /** RANDOM BACKGROUND CODE**/
-  var bgCount = 22;
+  var bgCount = 32;
   var num = Math.ceil(Math.random() * bgCount);
   document.getElementById('bg').style.background =
     "url('images/bg/" + num + ".jpg') no-repeat center center fixed";
@@ -276,7 +280,15 @@ resetBtn.onclick = function() {
   /**********************************/
   
   /** ******PICK FUNCTIONS********/
+  $("#quickpick").click(function() {
+    $(this).attr("disabled", true);
+    setTimeout(function() {
+        $('#quickpick').removeAttr("disabled");      
+    }, 2500);
+});
+
   quickPick.onclick = function quickPick () {
+
 
     /**SAVE SWITCH SETTINGS TO LOCAL STORAGE**/
     for (var i = 1; i <= 5; i++) {
@@ -484,6 +496,7 @@ resetBtn.onclick = function() {
     document.getElementById('map').innerHTML = map
     document.getElementById('mutators').innerHTML = mutator()
   
+    
     /** **Card Flip****/
   
     document.getElementById('card').classList.toggle('is-flipped')
