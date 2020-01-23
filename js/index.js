@@ -508,10 +508,10 @@ resetBtn.onclick = function() {
     /** ODOMETER**/
   
     var points2 = function () {
-      min = 100
-      mid1 = 500
-      mid2 = 650
-      max = 1000
+      min = 500
+      mid1 = 850
+      mid2 = 1200
+      max = 1700
       var regLimit = 1
       var midLimit = 0.1
       var maxLimit = 0.05
